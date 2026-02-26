@@ -1,0 +1,51 @@
+import Navbar from '@/components/Navbar';
+import PageHero from '@/components/PageHero';
+import ServiceIntro, { ServiceFeatures } from '@/components/ServiceDetails';
+import HowItWorks from '@/components/HowItWorks';
+import FAQSection from '@/components/FAQSection';
+import CTA from '@/components/CTA';
+import Footer from '@/components/Footer';
+
+export default function AirportTransfersPage() {
+  const features = [
+    "Flight tracking & monitoring",
+    "Meet & greet service",
+    "Punctual & reliable pickup",
+    "Zero hidden charges",
+    "24/7 Availability",
+    "Professional English-speaking drivers"
+  ];
+
+  return (
+    <main className="min-h-screen">
+      <Navbar />
+      <PageHero
+        titleTop="Reliable Airport"
+        titleBottom="Transfers Across Italy"
+        description="Private, comfortable, and on-time airport taxi service from all major airports including Rome, Milan, Venice, and more."
+        backgroundImage="https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=2070&auto=format&fit=crop"
+        buttonText="Book Airport Transfer Now"
+      />
+
+      <ServiceIntro
+        title="Stress-Free Airport Pickup & Drop Service"
+        content="We provide professional airport taxi transfers across Italy. Whether you’re arriving or departing, our experienced drivers ensure timely pickup, flight tracking, and comfortable travel. Avoid long taxi lines and travel with peace of mind."
+      />
+
+      <ServiceFeatures
+        title="Superior Airport Experience"
+        features={features}
+        bg="bg-[#F8F9FA]"
+      />
+
+
+      <HowItWorks />
+
+      <FAQSection />
+
+      <CTA />
+
+      <Footer />
+    </main>
+  );
+}
