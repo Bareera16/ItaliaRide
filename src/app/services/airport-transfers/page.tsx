@@ -5,6 +5,15 @@ import HowItWorks from '@/components/HowItWorks';
 import FAQSection from '@/components/FAQSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Airport Transfers | Italian Taxi Service",
+  description: "Reliable airport transfers across Italy. Book your private taxi to or from Rome, Milan, Venice and more with professional English-speaking drivers.",
+  alternates: {
+    canonical: "https://italiaride.it/services/airport-transfers/",
+  }
+};
 
 export default function AirportTransfersPage() {
   const features = [

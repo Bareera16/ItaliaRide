@@ -5,6 +5,15 @@ import HowItWorks from '@/components/HowItWorks';
 import FAQSection from '@/components/FAQSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Business Corporate Taxi | Italian Taxi Service",
+  description: "Professional executive taxi services for business meetings, conferences and VIP guests in Italy. On-time, reliable transportation for your corporate needs.",
+  alternates: {
+    canonical: "https://italiaride.it/services/business-taxi/",
+  }
+};
 
 export default function BusinessCorporatePage() {
   const features = [
@@ -23,7 +32,7 @@ export default function BusinessCorporatePage() {
         titleTop="Executive Corporate"
         titleBottom="Taxi Services in Italy"
         description="Professional transport solutions for business meetings, conferences, and VIP guests. Arrive with prestige."
-        backgroundImage="https://images.unsplash.com/photo-1450101496173-eb4151c8045c?q=80&w=2070&auto=format&fit=crop"
+        backgroundImage="/images/taxis-1.jpg"
         buttonText="Register Corporate Account"
       />
 

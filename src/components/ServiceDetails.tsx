@@ -12,11 +12,11 @@ export default function ServiceIntro({ title, content }: ServiceIntroProps) {
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="flex items-center justify-center gap-4 mb-6">
                         <div className="w-12 h-[2px] bg-gold" />
-                        <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em]">Introduction</h2>
+                        <p className="text-gold text-sm font-bold uppercase tracking-[0.4em]">Introduction</p>
                     </div>
-                    <h3 className="text-4xl md:text-5xl font-extrabold text-navy mb-8 leading-tight">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-8 leading-tight">
                         {title}
-                    </h3>
+                    </h2>
                     <p className="text-gray-600 text-lg leading-relaxed mb-10">
                         {content}
                     </p>
@@ -38,8 +38,8 @@ export function ServiceFeatures({ title, features, bg = "bg-gray-50" }: ServiceF
         <section className={`py-24 ${bg} font-inter`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Why Choose Us</h2>
-                    <h3 className="text-4xl font-bold text-navy">{title}</h3>
+                    <p className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Why Choose Us</p>
+                    <h2 className="text-4xl font-bold text-navy">{title}</h2>
                     <div className="w-20 h-1 bg-gold mx-auto mt-6" />
                 </div>
 

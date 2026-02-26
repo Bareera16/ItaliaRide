@@ -1,6 +1,15 @@
 import Navbar from '@/components/Navbar';
 import PageHero from '@/components/PageHero';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | ItaliaRide",
+  description: "Learn how ItaliaRide protects your personal data and ensures your privacy when booking our taxi services in Italy.",
+  alternates: {
+    canonical: "https://italiaride.it/privacy-policy/",
+  }
+};
 
 export default function PrivacyPolicyPage() {
   return (

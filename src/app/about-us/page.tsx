@@ -5,6 +5,15 @@ import MissionValues from '@/components/MissionValues';
 import StatsSection from '@/components/StatsSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "About Us | ItaliaRide",
+  description: "Learn about ItaliaRide, Italy's premier taxi transfer service. Our mission is to provide professional, reliable, and comfortable transportation for every traveler.",
+  alternates: {
+    canonical: "https://italiaride.it/about-us/",
+  }
+};
 
 export default function AboutUsPage() {
   return (

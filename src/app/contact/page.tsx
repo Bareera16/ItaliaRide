@@ -5,6 +5,15 @@ import ContactFormSection from '@/components/ContactFormSection';
 import FAQSection from '@/components/FAQSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Contact Us | ItaliaRide",
+  description: "Get in touch with ItaliaRide for custom taxi quotes, booking assistance, or any inquiries about our airport and city transfer services in Italy.",
+  alternates: {
+    canonical: "https://italiaride.it/contact/",
+  }
+};
 
 export default function ContactPage() {
   return (

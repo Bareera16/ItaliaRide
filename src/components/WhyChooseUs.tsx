@@ -40,12 +40,12 @@ export default function WhyChooseUs() {
                 <div className="text-center mb-20 max-w-3xl mx-auto">
                     <div className="flex items-center justify-center gap-4 mb-4 animate-slide-left [animation-delay:0.1s]">
                         <div className="w-8 h-[2px] bg-[#F4C430]" />
-                        <h2 className="text-[#F4C430] text-sm font-bold uppercase tracking-[0.4em]">The ItaliaRide Edge</h2>
+                        <p className="text-[#F4C430] text-sm font-bold uppercase tracking-[0.4em]">The ItaliaRide Edge</p>
                         <div className="w-8 h-[2px] bg-[#F4C430]" />
                     </div>
-                    <h3 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6 animate-slide-left [animation-delay:0.2s]">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6 animate-slide-left [animation-delay:0.2s]">
                         Why Choose Our <span className="text-[#F4C430]">Private Transfers</span> in Italy
-                    </h3>
+                    </h2>
                     <p className="text-gray-300 text-lg leading-relaxed animate-slide-left [animation-delay:0.3s]">
                         Experience reliable, taxi airport and city transfers across Italy with professional drivers and fixed pricing.
                     </p>
@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
                                     <div className="feature-icon">{feature.icon}</div>
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#F4C430] transition-colors">{feature.title}</h4>
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#F4C430] transition-colors">{feature.title}</h3>
                                     <p className="text-gray-400 text-sm leading-relaxed max-w-sm lg:ml-auto">
                                         {feature.desc}
                                     </p>
@@ -103,7 +103,7 @@ export default function WhyChooseUs() {
                                     <div className="feature-icon">{feature.icon}</div>
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#F4C430] transition-colors">{feature.title}</h4>
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#F4C430] transition-colors">{feature.title}</h3>
                                     <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
                                         {feature.desc}
                                     </p>

@@ -24,26 +24,49 @@ export default function Navbar() {
         { name: 'Business / Corporate', path: '/services/business-taxi/' },
         { name: 'Hourly Taxi', path: '/services/hourly-taxi/' },
         { name: 'Wedding & Events', path: '/services/wedding-events/' },
-        { name: 'City Taxi', path: '/city-transfer/' },
+        { name: 'City Taxi', path: '/city/' },
     ];
 
     const airports = [
-        { name: 'Rome Fiumicino Airport', path: '/airport/rome-fiumicino' },
-        { name: 'Milan Malpensa Airport', path: '/airport/milan-malpensa' },
-        { name: 'Venice Marco Polo Airport', path: '/airport/venice' }, // Adjusting to match slug in data
-        { name: 'Naples Airport', path: '/airport/naples' },
-        { name: 'Florence Airport', path: '/airport/florence' },
+        { name: 'Rome Fiumicino', path: '/airport/rome-fiumicino-airport-taxi' },
+        { name: 'Rome Ciampino', path: '/airport/rome-ciampino-airport-taxi' },
+        { name: 'Milan Malpensa', path: '/airport/milan-malpensa-airport-taxi' },
+        { name: 'Milan Linate', path: '/airport/milan-linate-airport-taxi' },
+        { name: 'Venice Marco Polo', path: '/airport/venice-marco-polo-airport-taxi' },
+        { name: 'Naples Airport', path: '/airport/naples-airport-taxi' },
+        { name: 'Florence Airport', path: '/airport/florence-airport-taxi' },
+        { name: 'Bologna Marconi', path: '/airport/bologna-marconi-airport-taxi' },
+        { name: 'Pisa Airport', path: '/airport/pisa-airport-taxi' },
+        { name: 'Verona Airport', path: '/airport/verona-airport-taxi' },
+        { name: 'Palermo Airport', path: '/airport/palermo-airport-taxi' },
+        { name: 'Catania Airport', path: '/airport/catania-fontanarossa-airport-taxi' },
+        { name: 'Bari Airport', path: '/airport/bari-airport-taxi' },
+        { name: 'Genoa Airport', path: '/airport/genoa-airport-taxi' },
     ];
 
     const cities = [
-        { name: 'Rome', path: '/city/rome' },
-        { name: 'Milan', path: '/city/milan' },
-        { name: 'Florence', path: '/city/florence' },
-        { name: 'Venice', path: '/city/venice' },
-        { name: 'Bologna', path: '/city/bologna' },
-        { name: 'Naples', path: '/city/naples' },
-        { name: 'Bari', path: '/city/bari' },
-        { name: 'Palermo', path: '/city/palermo' },
+        { name: 'Rome', path: '/city/rome-taxi-service' },
+        { name: 'Milan', path: '/city/milan-taxi-service' },
+        { name: 'Venice', path: '/city/venice-taxi-service' },
+        { name: 'Florence', path: '/city/florence-taxi-service' },
+        { name: 'Naples', path: '/city/naples-taxi-service' },
+        { name: 'Amalfi', path: '/city/amalfi-taxi-service' },
+        { name: 'Positano', path: '/city/positano-taxi-service' },
+        { name: 'Ravello', path: '/city/ravello-taxi-service' },
+        { name: 'Sorrento', path: '/city/sorrento-taxi-service' },
+        { name: 'Portofino', path: '/city/portofino-taxi-service' },
+        { name: 'Lake Como', path: '/city/como-taxi-service' },
+        { name: 'Taormina', path: '/city/taormina-taxi-service' },
+        { name: 'Bologna', path: '/city/bologna-taxi-service' },
+        { name: 'Bari', path: '/city/bari-taxi-service' },
+        { name: 'Palermo', path: '/city/palermo-taxi-service' },
+        { name: 'Siena', path: '/city/siena-taxi-service' },
+        { name: 'Pisa', path: '/city/pisa-taxi-service' },
+        { name: 'Lucca', path: '/city/lucca-taxi-service' },
+        { name: 'San Gimignano', path: '/city/san-gimignano-taxi-service' },
+        { name: 'Cinque Terre', path: '/city/riomaggiore-taxi-service' },
+        { name: 'Agrigento', path: '/city/agrigento-taxi-service' },
+        { name: 'Alberobello', path: '/city/alberobello-taxi-service' },
     ];
 
     const tours = [
@@ -132,15 +155,15 @@ export default function Navbar() {
                             </button>
                             <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] pt-4 mega-menu pointer-events-none group-hover:pointer-events-auto">
                                 <div className="bg-[#0F1C2E] border-t-2 border-[#F4C430] shadow-2xl p-8">
-                                    <h3 className="text-[#F4C430] text-sm font-bold uppercase tracking-[0.2em] mb-6 border-b border-[#F4C430]/20 pb-2">Top Italian Airports</h3>
+                                    <p className="text-[#F4C430] text-sm font-bold uppercase tracking-[0.2em] mb-6 border-b border-[#F4C430]/20 pb-2">Top Italian Airports</p>
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                                         {airports.map((item) => (
-                                            <Link key={item.name} href={item.path} className="text-white hover:text-[#F4C430] transition-colors text-[11px] uppercase tracking-widest font-semibold flex items-center gap-2">
-                                                <span className="w-1.5 h-1.5 bg-[#F4C430] rounded-full"></span>
+                                            <Link key={item.name} href={item.path} className="text-white hover:text-[#F4C430] transition-colors text-[10px] uppercase tracking-widest font-semibold flex items-center gap-2">
+                                                <span className="w-1 h-1 bg-[#F4C430] rounded-full"></span>
                                                 {item.name}
                                             </Link>
                                         ))}
-                                        <Link href="/airport-transfer/" className="text-[#F4C430] hover:underline transition-colors text-[11px] uppercase tracking-widest font-bold mt-2 inline-block">View All Airports →</Link>
+                                        <Link href="/airport/" className="text-[#F4C430] hover:underline transition-colors text-[11px] uppercase tracking-widest font-bold mt-2 col-span-2">View All Airports →</Link>
                                     </div>
                                 </div>
                             </div>
@@ -156,16 +179,16 @@ export default function Navbar() {
                             </button>
                             <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] pt-4 mega-menu pointer-events-none group-hover:pointer-events-auto">
                                 <div className="bg-[#0F1C2E] border-t-2 border-[#F4C430] shadow-2xl p-8">
-                                    <h3 className="text-[#F4C430] text-sm font-bold uppercase tracking-[0.2em] mb-6 border-b border-[#F4C430]/20 pb-2">Top Italian Cities</h3>
-                                    <div className="grid grid-cols-3 gap-x-6 gap-y-4">
+                                    <p className="text-[#F4C430] text-sm font-bold uppercase tracking-[0.2em] mb-6 border-b border-[#F4C430]/20 pb-2">Top Italian Cities</p>
+                                    <div className="grid grid-cols-4 gap-x-4 gap-y-3">
                                         {cities.map((item) => (
-                                            <Link key={item.name} href={item.path} className="text-white hover:text-[#F4C430] transition-colors text-[11px] uppercase tracking-widest font-semibold flex items-center gap-2">
-                                                <span className="w-1.5 h-1.5 bg-[#F4C430] rounded-full"></span>
+                                            <Link key={item.name} href={item.path} className="text-white hover:text-[#F4C430] transition-colors text-[9px] uppercase tracking-widest font-semibold flex items-center gap-1.5">
+                                                <span className="w-1 h-1 bg-[#F4C430] rounded-full"></span>
                                                 {item.name}
                                             </Link>
                                         ))}
                                     </div>
-                                    <Link href="/city-transfer/" className="text-[#F4C430] hover:underline transition-colors text-[11px] uppercase tracking-widest font-bold mt-6 inline-block">View All 100+ Cities →</Link>
+                                    <Link href="/city/" className="text-[#F4C430] hover:underline transition-colors text-[11px] uppercase tracking-widest font-bold mt-6 inline-block">View All 100+ Cities →</Link>
                                 </div>
                             </div>
                         </div>

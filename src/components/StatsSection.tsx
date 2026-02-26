@@ -30,7 +30,7 @@ export default function StatsSection() {
                 </div>
 
                 <div className="mt-20 text-center max-w-3xl mx-auto">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Built on Trust and Excellence</h3>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Built on Trust and Excellence</h2>
                     <p className="text-gray-400">
                         Our growth is a testament to our commitment to quality and safety. We don't just provide rides; we provide peace of mind in every Italian mile.
                     </p>

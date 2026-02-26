@@ -35,10 +35,10 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div className="col-span-1">
-                        <h4 className="text-white font-bold text-lg mb-8 relative">
+                        <p className="text-white font-bold text-lg mb-8 relative">
                             Explore
                             <span className="absolute -bottom-2 left-0 w-8 h-1 bg-gold" />
-                        </h4>
+                        </p>
                         <ul className="space-y-4 text-sm">
                             <li><Link href="/" className="hover:text-gold transition-colors">Home</Link></li>
                             <li><Link href="/services/" className="hover:text-gold transition-colors">Services</Link></li>
@@ -49,10 +49,10 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <div className="col-span-1">
-                        <h4 className="text-white font-bold text-lg mb-8 relative">
+                        <p className="text-white font-bold text-lg mb-8 relative">
                             Contact Us
                             <span className="absolute -bottom-2 left-0 w-8 h-1 bg-gold" />
-                        </h4>
+                        </p>
                         <ul className="space-y-6 text-sm text-gold">
                             <li className="flex items-start gap-4">
                                 <Phone className="w-5 h-5 shrink-0" />
@@ -73,10 +73,10 @@ export default function Footer() {
 
                     {/* Newsletter */}
                     <div className="col-span-1">
-                        <h4 className="text-white font-bold text-lg mb-8 relative">
+                        <p className="text-white font-bold text-lg mb-8 relative">
                             Newsletter
                             <span className="absolute -bottom-2 left-0 w-8 h-1 bg-gold" />
-                        </h4>
+                        </p>
                         <p className="text-sm mb-6">Subscribe to receive updates on taxi travel in Italy.</p>
                         <form className="flex">
                             <input

@@ -5,6 +5,15 @@ import HowItWorks from '@/components/HowItWorks';
 import FAQSection from '@/components/FAQSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Hourly Taxi Service | Italian Taxi Service",
+  description: "Personal taxi service by the hour in Italy. Enjoy flexibility with a professional driver at your disposal for sightseeing, business, or events.",
+  alternates: {
+    canonical: "https://italiaride.it/services/hourly-taxi/",
+  }
+};
 
 export default function HourlytaxiPage() {
   const features = [
@@ -23,7 +32,7 @@ export default function HourlytaxiPage() {
         titleTop="Private taxi"
         titleBottom="Service by the Hour"
         description="Flexible, taxi transport tailored specifically to your schedule and personal requirements."
-        backgroundImage="https://images.unsplash.com/photo-1511210115033-ec8464db31d6?q=80&w=2070&auto=format&fit=crop"
+        backgroundImage="/images/Taxis.webp"
         buttonText="Book Hourly Service"
       />
 

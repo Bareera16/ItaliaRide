@@ -14,6 +14,20 @@ export async function generateStaticParams() {
     }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const tour = tours.find((t) => t.slug === slug);
+    const tourName = tour ? tour.name : slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+    return {
+        title: `${tourName} | Private Taxi Tours Italy`,
+        description: `Experience ${tourName} with our professional private taxi tours. Luxury transportation, English-speaking chauffeurs, and flexible itineraries across Italy.`,
+        alternates: {
+            canonical: `https://italiaride.it/tour/${slug}/`,
+        }
+    };
+}
+
 export default async function TourPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const tour = tours.find((t) => t.slug === slug);
@@ -56,8 +70,8 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
                         </div>
 
                         <div className="animate-slide-left [animation-delay:0.4s]">
-                            <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Journey Into History</h2>
-                            <h3 className="text-3xl md:text-5xl font-bold text-navy mb-10 leading-tight">About The Tour</h3>
+                            <p className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Journey Into History</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-10 leading-tight">About The Tour</h2>
                             <p className="text-gray-600 text-lg leading-relaxed mb-10">
                                 {tour.description}
                                 <br /><br />
@@ -100,8 +114,8 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             {/* Tour Highlights / Features Section */}
             <section className="py-24 bg-gray-50 overflow-hidden">
                 <div className="container mx-auto px-6 text-center mb-16">
-                    <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Elevated Experience</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-navy">Tour Highlights & Features</h3>
+                    <p className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Elevated Experience</p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy">Tour Highlights & Features</h2>
                     <div className="w-20 h-1 bg-gold mx-auto mt-6" />
                 </div>
 
@@ -119,7 +133,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
                                             {iconSet[index % iconSet.length]}
                                         </div>
                                     </div>
-                                    <h4 className="text-white font-bold text-sm mb-4 group-hover:text-gold transition-colors tracking-tight leading-tight">{highlight}</h4>
+                                    <h3 className="text-white font-bold text-sm mb-4 group-hover:text-gold transition-colors tracking-tight leading-tight">{highlight}</h3>
                                 </div>
                             </div>
                         ))}
@@ -134,10 +148,10 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-20 items-center justify-between">
                         <div className="w-full lg:w-2/3 animate-slide-left">
-                            <h2 className="text-sm font-bold uppercase text-gold tracking-[0.4em] mb-6 font-inter">Your Journey Begins</h2>
-                            <h3 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8">
+                            <p className="text-sm font-bold uppercase text-gold tracking-[0.4em] mb-6 font-inter">Your Journey Begins</p>
+                            <h2 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8">
                                 Book your <span className="text-gold">{tour.name}</span> tour now!
-                            </h3>
+                            </h2>
                             <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl italic">
                                 Ready to discover the heart of Italy in absolute comfort? Our reservation team is standing by to confirm your premium taxi tour.
                             </p>

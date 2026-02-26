@@ -32,8 +32,8 @@ export default function Testimonials() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Client Feedback</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white">What Our Travelers Say</h3>
+                    <p className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Client Feedback</p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">What Our Travelers Say</h2>
                     <div className="flex items-center justify-center gap-2 mt-6">
                         <div className="flex text-gold">
                             {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
@@ -57,7 +57,7 @@ export default function Testimonials() {
                                             {review.name.charAt(0)}
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-white text-sm tracking-tight">{review.name}</h4>
+                                            <h3 className="font-bold text-white text-sm tracking-tight">{review.name}</h3>
                                             <p className="text-[10px] font-bold text-gold/60 uppercase tracking-widest">{review.location}</p>
                                         </div>
                                     </div>

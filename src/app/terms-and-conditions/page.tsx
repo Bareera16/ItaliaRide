@@ -1,6 +1,15 @@
 import Navbar from '@/components/Navbar';
 import PageHero from '@/components/PageHero';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions | ItaliaRide",
+  description: "Read the terms and conditions for booking our taxi services in Italy. Information on pricing, cancellations, and service agreements.",
+  alternates: {
+    canonical: "https://italiaride.it/terms-and-conditions/",
+  }
+};
 
 export default function TermsAndConditionsPage() {
   return (

@@ -11,16 +11,16 @@ export default function CTA() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-gold text-sm font-bold uppercase tracking-[0.6em] mb-8 animate-slide-left [animation-delay:0.2s]">Start Your Journey</h2>
-                    <h3 className="text-4xl md:text-6xl font-bold text-white mb-10 leading-tight animate-slide-left [animation-delay:0.4s]">
+                    <p className="text-gold text-sm font-bold uppercase tracking-[0.6em] mb-8 animate-slide-left [animation-delay:0.2s]">Start Your Journey</p>
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-10 leading-tight animate-slide-left [animation-delay:0.4s]">
                         Ready to Travel Italy <br />in Absolute Comfort?
-                    </h3>
+                    </h2>
                     <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto animate-slide-left [animation-delay:0.6s]">
                         Book your taxi transfer today and experience the difference of a professional taxi service.
                     </p>
                     <div className="animate-slide-left [animation-delay:0.8s] flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
                         <TaxiButton href="/book-now/" className="md:scale-125 md:mr-4 flex-shrink-0">
-                            Book Your Transfer Now
+                            Book Your Italian Taxi Transfer
                         </TaxiButton>
                         <div className="flex items-center">
                             <a

@@ -5,6 +5,15 @@ import HowItWorks from '@/components/HowItWorks';
 import FAQSection from '@/components/FAQSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Wedding & Events Taxi | Italian Taxi Service",
+    description: "Elegant transportation for weddings and special events in Italy. High-quality taxi service to ensure your guests arrive in style and comfort.",
+    alternates: {
+        canonical: "https://italiaride.it/services/wedding-events/",
+    }
+};
 
 export default function WeddingEventsPage() {
     const features = [

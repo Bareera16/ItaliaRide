@@ -13,11 +13,29 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function CityPage({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const city = cities.find((c) => c.slug === slug);
+    const cityName = city ? city.name : slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
-    if (!city) notFound();
+    return {
+        title: `${cityName} | Private Taxi Transfers & City Tours`,
+        description: `Explore ${cityName} with our professional taxi service. Premium airport transfers, city tours, and point-to-point transfers with English-speaking drivers.`,
+        alternates: {
+            canonical: `https://italiaride.it/city/${slug}/`,
+        }
+    };
+}
+
+export default async function CityPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const city = cities.find((c) => c.slug === slug) || {
+        slug: slug,
+        name: slug.split('-').filter(w => w !== 'taxi' && w !== 'service').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+        hero_image: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366",
+        description: "Explore this beautiful Italian destination with our premium taxi services. Professional drivers and luxury vehicles at your service.",
+        popular_tours: ["City Center Tour", "Historical Landmarks", "Local Food Tasting"]
+    };
 
     const services = [
         { title: "Airport Transfers", icon: <Plane />, desc: "Reliable airport pickups & drop-offs." },
@@ -42,8 +60,8 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
                 <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="animate-slide-left [animation-delay:0.2s]">
-                            <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">The Pride of Italy</h2>
-                            <h3 className="text-3xl md:text-5xl font-bold text-navy mb-10 leading-tight">Explore {city.name} With Excellence</h3>
+                            <p className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">The Pride of Italy</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-10 leading-tight">Explore {city.name} With Excellence</h2>
                             <p className="text-gray-600 text-lg leading-relaxed mb-10">
                                 {city.description}
                                 <br /><br />
@@ -84,8 +102,8 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
             {/* Our Services Section */}
             <section className="py-24 bg-gray-50 overflow-hidden">
                 <div className="container mx-auto px-6 text-center mb-16">
-                    <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Our Local Expertise</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-navy">Our Services in {city.name}</h3>
+                    <p className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Our Local Expertise</p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy">Our Services in {city.name}</h2>
                     <div className="w-20 h-1 bg-gold mx-auto mt-6" />
                 </div>
 
@@ -103,7 +121,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
                                             {service.icon}
                                         </div>
                                     </div>
-                                    <h4 className="text-white font-bold text-lg mb-4 group-hover:text-gold transition-colors">{service.title}</h4>
+                                    <h3 className="text-white font-bold text-lg mb-4 group-hover:text-gold transition-colors">{service.title}</h3>
                                     <p className="text-gray-400 text-sm leading-relaxed mb-6">
                                         {service.desc}
                                     </p>
@@ -121,10 +139,10 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
                         <div className="w-full lg:w-1/2 animate-slide-left">
-                            <h2 className="text-sm font-bold uppercase text-gold tracking-[0.4em] mb-6">Experience Italy</h2>
-                            <h3 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8">
+                            <p className="text-sm font-bold uppercase text-gold tracking-[0.4em] mb-6">Experience Italy</p>
+                            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8">
                                 Ready for a Journey in <span className="text-gold">{city.name}?</span>
-                            </h3>
+                            </h2>
                             <p className="text-gray-400 text-lg leading-relaxed mb-10">
                                 Don't wait at taxi stands. Book your private ride now and travel in complete comfort.
                             </p>

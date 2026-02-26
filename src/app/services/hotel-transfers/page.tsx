@@ -5,6 +5,15 @@ import HowItWorks from '@/components/HowItWorks';
 import FAQSection from '@/components/FAQSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Hotel Transfers | Italian Taxi Service",
+  description: "Private hotel door-to-door transportation in Italy. Professional taxi service from airports and stations directly to your hotel or Airbnb.",
+  alternates: {
+    canonical: "https://italiaride.it/services/hotel-transfers/",
+  }
+};
 
 export default function HotelTransfersPage() {
   const features = [

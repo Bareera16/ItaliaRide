@@ -13,11 +13,29 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function AirportPage({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const airport = airports.find((a) => a.slug === slug);
+    const airportName = airport ? airport.name : slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
-    if (!airport) notFound();
+    return {
+        title: `${airportName} | Private Airport Taxi Transfers`,
+        description: `Book your private taxi transfer to or from ${airportName}. Professional drivers, fixed pricing, and premium fleet for a stress-free travel in Italy.`,
+        alternates: {
+            canonical: `https://italiaride.it/airport/${slug}/`,
+        }
+    };
+}
+
+export default async function AirportPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const airport = airports.find((a) => a.slug === slug) || {
+        slug: slug,
+        name: slug.split('-').filter(w => w !== 'airport' && w !== 'taxi').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') + ' Airport',
+        hero_image: "/images/hero.png",
+        description: "Professional airport transfer service. Reliable, punctual, and comfortable rides to and from the airport.",
+        features: ["Flight tracking", "Meet & greet service", "Fixed pricing", "24/7 availability", "Premium fleet"]
+    };
 
     const icons = [<Plane key="1" />, <ShieldCheck key="2" />, <UserCheck key="3" />, <Clock key="4" />, <MousePointer2 key="5" />];
 
@@ -37,8 +55,8 @@ export default async function AirportPage({ params }: { params: Promise<{ slug: 
                 <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="animate-slide-left [animation-delay:0.2s]">
-                            <h2 className="text-sm font-bold uppercase text-gold tracking-[0.4em] mb-4">Introduction</h2>
-                            <h3 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">Travel from {airport.name} in Comfort</h3>
+                            <p className="text-sm font-bold uppercase text-gold tracking-[0.4em] mb-4">Introduction</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">Travel from {airport.name} in Comfort</h2>
                             <p className="text-gray-600 text-lg leading-relaxed mb-8">
                                 {airport.description}
                             </p>
@@ -69,8 +87,8 @@ export default async function AirportPage({ params }: { params: Promise<{ slug: 
             {/* Why Choose Section */}
             <section className="py-24 bg-gray-50 overflow-hidden">
                 <div className="container mx-auto px-6 text-center mb-16">
-                    <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Our Excellence</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-navy">Why Choose This Airport Service</h3>
+                    <p className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Our Excellence</p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy">Why Choose This Airport Service</h2>
                     <div className="w-20 h-1 bg-gold mx-auto mt-6" />
                 </div>
 
@@ -88,7 +106,7 @@ export default async function AirportPage({ params }: { params: Promise<{ slug: 
                                             {icons[index % icons.length]}
                                         </div>
                                     </div>
-                                    <h4 className="text-white font-bold text-xl mb-4 group-hover:text-gold transition-colors">{feature}</h4>
+                                    <h3 className="text-white font-bold text-xl mb-4 group-hover:text-gold transition-colors">{feature}</h3>
                                     <p className="text-gray-400 text-xs uppercase tracking-widest font-bold">Standard Inclusion</p>
                                 </div>
                             </div>
@@ -105,10 +123,10 @@ export default async function AirportPage({ params }: { params: Promise<{ slug: 
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
                         <div className="w-full lg:w-1/2 animate-slide-left">
-                            <h2 className="text-sm font-bold uppercase text-gold tracking-[0.4em] mb-6">Reservation</h2>
-                            <h3 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8">
+                            <p className="text-sm font-bold uppercase text-gold tracking-[0.4em] mb-6">Reservation</p>
+                            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8">
                                 Book your <span className="text-gold">{airport.name}</span> transfer today!
-                            </h3>
+                            </h2>
                             <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl">
                                 Secure your luxury airport taxi in less than 2 minutes. Get instant confirmation and travel with peace of mind.
                             </p>

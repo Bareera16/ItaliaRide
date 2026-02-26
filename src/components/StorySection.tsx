@@ -8,11 +8,11 @@ export default function StorySection() {
                     <div className="w-full lg:w-1/2 animate-slide-left">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-[2px] bg-gold" />
-                            <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em]">Our Story</h2>
+                            <p className="text-gold text-sm font-bold uppercase tracking-[0.4em]">Our Story</p>
                         </div>
-                        <h3 className="text-4xl md:text-5xl font-extrabold text-navy leading-tight mb-8">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-navy leading-tight mb-8">
                             Taxi Transfers <br /><span className="text-gold italic font-serif">Born from Passion</span>
-                        </h3>
+                        </h2>
                         <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                             <p>
                                 We started with a simple mission: to provide reliable, stress-free airport transfers across Italy. We realized that travel should be more than just moving from A to B—it should be an experience of comfort and elegance.

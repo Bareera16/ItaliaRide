@@ -26,8 +26,8 @@ export default function HowItWorks() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-20">
-                    <h2 className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">The Process</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white">How It Works</h3>
+                    <p className="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">The Process</p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">How It Works</h2>
                     <div className="w-20 h-1 bg-gold mx-auto mt-6" />
                 </div>
 
@@ -45,7 +45,7 @@ export default function HowItWorks() {
                                     </span>
                                     {step.icon}
                                 </div>
-                                <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-colors">{step.title}</h4>
+                                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-colors">{step.title}</h3>
                                 <p className="text-gray-400 max-w-[250px] mx-auto leading-relaxed text-sm">
                                     {step.desc}
                                 </p>
